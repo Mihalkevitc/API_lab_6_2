@@ -1,0 +1,39 @@
+<div class="shadow border p-4">
+    @if(editUserId){
+        <h2 class="text-xl font-semibold">Update contact (Mihalkevitc)</h2>
+    }
+    @else{<h2 class="text-xl font-semibold">Add contact (Mihalkevitc)</h2>
+    }
+
+    <form action="" [formGroup]="userForm">
+        <div class="flex flex-wrap">
+            <!-- <form class="example-form"> -->
+                <mat-form-field class="w-full">
+                  <mat-label>Name</mat-label>
+                  <input type="text" matInput formControlName="name">
+                </mat-form-field>
+
+                <mat-form-field class="w-full">
+                    <mat-label>Email</mat-label>
+                    <input type="text" matInput formControlName="email">
+                </mat-form-field>
+
+                <mat-form-field class="w-full">
+                    <mat-label>Phone</mat-label>
+                    <input type="text" matInput formControlName="phone">
+                </mat-form-field>
+              <!-- </form> -->
+        
+        </div>
+        <div>
+            @if(editUserId)
+            {
+                <button mat-raised-button color="primary" (click)="updateUser()">Update</button>
+            }
+            @else{<button mat-raised-button color="primary" (click)="addUser()">Add</button>
+            }
+            
+        </div>
+    </form>
+
+</div>
